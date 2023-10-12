@@ -188,3 +188,9 @@ variable "worker_pool_id" {
   type        = string
   default     = ""
 }
+
+variable "disabled" {
+  description = "Allows us to disable the cloudbuild triggers."
+  type = bool
+  default = false
+}

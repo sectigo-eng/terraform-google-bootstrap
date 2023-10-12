@@ -67,7 +67,7 @@ resource "google_cloudbuild_trigger" "triggers" {
   location    = var.trigger_location
   name        = "${local.default_prefix}-${each.key}"
   description = "${title(each.key)} Terraform configs for ${var.tf_repo_uri} ${var.tf_repo_dir}. Managed by Terraform."
-
+  disabled    = var.disabled
   # CSR repo
   dynamic "trigger_template" {
     for_each = local.is_source_repo ? [1] : []
